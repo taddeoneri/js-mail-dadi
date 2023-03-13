@@ -80,15 +80,15 @@ btnNumber2.addEventListener('click', function(){
 btnWinner.addEventListener('click', function(){
     if(number1 > number2){
         return document.getElementById('card').innerHTML += `
-        <h4 class="my-3">Player one won.</h4>
+        <h4 class="my-3 text-center">Player one won.</h4>
         `
     } else if (number1 < number2){
         return document.getElementById('card').innerHTML += `
-        <h4 class="my-3">Player two won.</h4>
+        <h4 class="my-3 text-center">Player two won.</h4>
         `
     } else{
         return document.getElementById('card').innerHTML += `
-        <h4 class="my-3">The two numbers are equal, parity</h4>
+        <h4 class="my-3 text-center">The two numbers are equal, parity</h4>
         `
     }
 })
