@@ -1,9 +1,9 @@
 /*
+Mail
 
 Chiedi all’utente la sua email,
 controlla che sia nella lista di chi può accedere,
 stampa un messaggio appropriato sull’esito del controllo.
-
 */
 
 
@@ -32,9 +32,9 @@ const email = [
 
 let guest;
 
-const button = document.querySelector('button');
+const btnEmail = document.getElementById('btnEmail');
 
-button.addEventListener('click', function(){
+btnEmail.addEventListener('click', function(){
     let emailUser = document.getElementById('email').value;
     for(let i = 0; i < email.length; i++){
         if(emailUser.toLowerCase() === email[i].toLowerCase()){
@@ -42,12 +42,60 @@ button.addEventListener('click', function(){
         }
     }
     if(guest == 0){
-        document.getElementById('box').innerHTML += `
+        return document.getElementById('box').innerHTML += `
             <h4 class="my-3">Verified email, you will be redirected to the page in a few seconds.</h4>
         `
     } else{
-        document.getElementById('box').innerHTML += `
-            <h4 class="my-3">Unauthorized email, please unsubscribe again.</h4>
+        return document.getElementById('box').innerHTML += `
+            <h4 class="my-3 text-danger">Unauthorized email, please unsubscribe again.</h4>
         `
     }
 });
+
+
+/*
+Gioco dei dadi
+
+Generare un numero random da 1 a 6, sia per il giocatore sia per il computer.
+Stabilire il vincitore, in base a chi fa il punteggio più alto.
+*/
+
+let number1;
+let number2;
+
+const btnNumber1 = document.getElementById('btnNumber1');
+const btnNumber2 = document.getElementById('btnNumber2');
+const btnWinner = document.getElementById('btnWinner');
+
+btnNumber1.addEventListener('click', function(){
+    number1 = getRandomInt(1, 6);
+    return document.getElementById('random1').innerHTML += number1;
+});
+
+btnNumber2.addEventListener('click', function(){
+    number2 = getRandomInt(1, 6);
+    return document.getElementById('random2').innerHTML += number2;
+});
+
+btnWinner.addEventListener('click', function(){
+    if(number1 > number2){
+        return document.getElementById('card').innerHTML += `
+        <h4 class="my-3">Player one won.</h4>
+        `
+    } else if (number1 < number2){
+        return document.getElementById('card').innerHTML += `
+        <h4 class="my-3">Player two won.</h4>
+        `
+    } else{
+        return document.getElementById('card').innerHTML += `
+        <h4 class="my-3">The two numbers are equal, parity</h4>
+        `
+    }
+})
+
+
+
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
