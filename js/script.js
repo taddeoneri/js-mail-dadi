@@ -37,7 +37,7 @@ const button = document.querySelector('button');
 button.addEventListener('click', function(){
     let emailUser = document.getElementById('email').value;
     for(let i = 0; i < email.length; i++){
-        if(emailUser === email[i]){
+        if(emailUser.toLowerCase() === email[i].toLowerCase()){
             guest = 0;
         }
     }
