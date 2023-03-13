@@ -69,12 +69,12 @@ const btnWinner = document.getElementById('btnWinner');
 
 btnNumber1.addEventListener('click', function(){
     number1 = getRandomInt(1, 6);
-    return document.getElementById('random1').innerHTML += number1;
+    return document.getElementById('demo1').innerHTML = number1;
 });
 
 btnNumber2.addEventListener('click', function(){
     number2 = getRandomInt(1, 6);
-    return document.getElementById('random2').innerHTML += number2;
+    return document.getElementById('demo2').innerHTML = number2;
 });
 
 btnWinner.addEventListener('click', function(){
