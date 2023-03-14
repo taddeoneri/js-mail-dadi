@@ -39,10 +39,10 @@ btnEmail.addEventListener('click', function(){
     let emailUser = document.getElementById('email').value;
     for(let i = 0; i < email.length; i++){
         if(emailUser.toLowerCase() === email[i].toLowerCase()){
-            guest = 0;
+            guest = 1;
         }
     }
-    if(guest == 0){
+    if(guest == 1){
         return document.getElementById('box').innerHTML += `
             <h4 class="my-3">Verified email, you will be redirected to the page in a few seconds.</h4>
         `
