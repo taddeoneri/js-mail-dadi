@@ -33,6 +33,7 @@ const email = [
 let guest;
 
 const btnEmail = document.getElementById('btnEmail');
+const btnReset = document.getElementById('btnReset');
 
 btnEmail.addEventListener('click', function(){
     let emailUser = document.getElementById('email').value;
@@ -52,6 +53,9 @@ btnEmail.addEventListener('click', function(){
     }
 });
 
+btnReset.addEventListener('click', function(){
+    emailUser = '';
+});
 
 /*
 Gioco dei dadi
