@@ -57,6 +57,9 @@ btnReset.addEventListener('click', function(){
     emailUser = '';
 });
 
+
+
+
 /*
 Gioco dei dadi
 
